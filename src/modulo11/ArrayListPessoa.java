@@ -1,35 +1,50 @@
 package modulo11;
 
+
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class ArrayListPessoa {
 	
 	public static void main(String args[]) {
 		
+		Scanner s = new Scanner(System.in);
+		
 		System.out.println("Lista de Pessoa");
-		ArrayList<Pessoa> cliente = new ArrayList<Pessoa>();
 		
-		Pessoa a = new Pessoa(" Aline", " Feminino");
-		Pessoa b = new Pessoa(" Caio", " Masculino");
-		Pessoa c = new Pessoa(" Willian", " Masculino");
-		Pessoa d = new Pessoa(" Bruna", " Feminino");
-		Pessoa e = new Pessoa(" Ricardo", " Masculino");
-		cliente.add(a);
-		cliente.add(b);
-		cliente.add(c);
-		cliente.add(d);
-		cliente.add(e);
+		String pessoas = s.next();
+		System.out.println(pessoas);
+		String[] pessoas1 = pessoas.split(",");
 		
-		System.out.println(cliente);
-		Collections.sort(cliente);
-		System.out.println(cliente);
+	for (String pessoa : pessoas1) {
+		System.out.println(pessoa);	
+		}
 		
+		List<String> homens = new ArrayList<>();
+		List<String> mulheres = new ArrayList<>();
 	
+	for (String pessoa : pessoas1) {
+		String[] dadosPessoa = pessoa.split("-");
 		
+		String nome = dadosPessoa[0];
+		String sexo = dadosPessoa[1];
 		
+		System.out.println(nome);
+		System.out.println(sexo);
+		
+		if("M".equals(sexo)) {
+			homens.add(nome);
+		} else {
+			mulheres.add(nome);
+		}
 		
 	}
-
+	
+	System.out.println("Homens: " + homens);
+	System.out.println("Mulheres: " + mulheres);	
+	
+}
+		
 }
